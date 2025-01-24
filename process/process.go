@@ -109,7 +109,7 @@ func (p *Process) SendMessage(to int, event string, targetCh chan<- Message, sho
 // ReceiveMessages 메시지 '한 번만' 수신
 //
 // 실제로는 무한 루프+고루틴 방식이 일반적이지만,
-// 요구사항상 "for 루프 구문 없이 단 한 번만" 메시지를 받도록 구성.
+// "for 루프 구문 없이 단 한 번만" 메시지를 받도록 구성.
 func (p *Process) ReceiveMessages(messageCh <-chan Message) {
 	msg, ok := <-messageCh
 	if !ok {
