@@ -72,7 +72,7 @@ func (vcm *VectorClockManager) GetClock(processID int) []int {
 func NewProcess(id int, clockMgr *VectorClockManager) *Process {
 	return &Process{
 		ID:        id,
-		MessageCh: make(chan Message, 10), // 프로세스별 채널 생성 (버퍼 크기 10)
+		MessageCh: make(chan Message, 1), // 프로세스별 채널 생성 (버퍼 크기 10)
 		ClockMgr:  clockMgr,
 	}
 }
